@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./css/main.css" />
+    <title>Frontend Mentor | Tip calculator app</title>
+  </head>
+  <body class="bg-lightGrayCyan">
+    <main class="main text-veryDarkGrayCyan font-bold">
+      <div class="w-100">
+        <img src="./images/logo.svg" alt="Logo" class="m-auto py-12" />
+      </div>
+
+      <div
+        class="bg-white rounded-t-2xl py-9 px-8 lg:flex lg:max-w-[920px] lg:max-h-[484px] lg:m-auto lg:gap-9 lg:rounded-2xl"
+      >
+        <div class="w-full">
+          <div>
+            <div class="mb-2">
+              <div class="flex mb-3 justify-between lg:mb-1">
+                <h3 class="font-bold text-base text-veryDarkGrayCyan">Bill</h3>
+              </div>
+            </div>
+            <div class="relative">
+              <input
+                type="number"
+                min="0"
+                class="w-full py-4 pr-5 pl-10 text-right bg-veryLightGrayCyan font-bold text-darkCyan text-lg focus:outline-strongCyan focus:outline-8 rounded-lg"
+                value="0"
+                id="billAmount"
+              />
+              <img
+                src="./images/icon-dollar.svg"
+                class="absolute w-4 h-5 translate-x-5 translate-y-[-40px]"
+                alt="Dollar"
+              />
+            </div>
+          </div>
+          <div class="mt-9 lg:mt-6">
+            <h3 class="font-bold text-base text-veryDarkGrayCyan mb-5 lg:mb-3">
+              Select Tip %
+            </h3>
+            <div class="grid grid-cols-2 gap-4 lg:grid-cols-3">
+              <button
+                class="block text-center bg-darkCyan py-4 rounded-lg font-bold text-xl text-white tip"
+                value="5"
+              >
+                5%
+              </button>
+              <button
+                class="block text-center bg-darkCyan py-4 rounded-lg font-bold text-xl text-white tip"
+                value="10"
+              >
+                10%
+              </button>
+              <button
+                class="block text-center bg-darkCyan py-4 rounded-lg font-bold text-xl text-white tip"
+                value="15"
+              >
+                15%
+              </button>
+              <button
+                class="block text-center bg-darkCyan py-4 rounded-lg font-bold text-xl text-white tip"
+                value="25"
+              >
+                25%
+              </button>
+              <button
+                class="block text-center bg-darkCyan py-4 rounded-lg font-bold text-xl text-white tip"
+                value="50"
+              >
+                50%
+              </button>
+              <input
+                type="number"
+                min="0"
+                class="w-full py-4 px-5 text-right bg-veryLightGrayCyan font-bold text-darkCyan text-lg focus:outline-strongCyan focus:outline-8 rounded-lg"
+                placeholder="Custom"
+                id="custom"
+              />
+            </div>
+          </div>
+          <div class="mt-10 lg:mt-7">
+            <div class="flex mb-3 justify-between lg:mb-1">
+              <h3 class="font-bold text-base text-veryDarkGrayCyan">
+                Number of People
+              </h3>
+              <h3 class="font-bold text-red-400 hidden" id="personError">
+                Can't be zero
+              </h3>
+            </div>
+            <div class="relative">
+              <input
+                type="number"
+                min="0"
+                class="w-full py-4 pr-5 pl-10 text-right bg-veryLightGrayCyan font-bold text-darkCyan text-lg focus:border-solid focus:border-2 focus:border-strongCyan rounded-lg outline-none"
+                value="0"
+                id="person"
+              />
+              <img
+                src="./images/icon-person.svg"
+                class="absolute w-4 h-5 translate-x-5 translate-y-[-40px]"
+                alt="Person"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class="bg-darkCyan rounded-2xl pt-12 pb-6 px-12 mt-9 w-full lg:mt-0 lg:pb-10"
+        >
+          <div class="flex flex-col justify-between h-full">
+            <div>
+              <div class="flex justify-between items-center">
+                <div class="title text-base">
+                  <h3 class="text-white font-medium">Tip Amount</h3>
+                  <h4>/ person</h4>
+                </div>
+                <h2 class="text-strongCyan text-2xl">
+                  $ <span id="tipAmount">0.00</span>
+                </h2>
+              </div>
+              <div class="flex justify-between items-center my-9">
+                <div class="title text-base">
+                  <h3 class="text-white font-medium">Total</h3>
+                  <h4>/ person</h4>
+                </div>
+                <h2 class="text-strongCyan text-2xl">
+                  $ <span id="total">0.00</span>
+                </h2>
+              </div>
+            </div>
+
+            <button
+              type="button"
+              class="w-full text-center bg-strongCyan py-4 rounded-lg font-bold text-xl text-darkCyan uppercase hover:bg-lightGrayCyan disabled:bg-veryDarkGrayCyan"
+              disabled
+              id="reset"
+            >
+              Reset
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="js/script.js"></script>
+  </body>
+</html>
